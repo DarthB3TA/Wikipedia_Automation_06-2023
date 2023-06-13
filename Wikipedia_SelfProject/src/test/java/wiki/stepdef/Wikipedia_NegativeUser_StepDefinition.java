@@ -73,7 +73,6 @@ public class Wikipedia_NegativeUser_StepDefinition  extends Wikipedia_BasePage
 		
 		Thread.sleep(500);
 		
-		driver.quit();
-		
+		driver.quit();	
 	}
 }

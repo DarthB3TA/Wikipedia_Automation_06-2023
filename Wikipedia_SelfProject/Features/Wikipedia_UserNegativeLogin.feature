@@ -15,4 +15,3 @@ And The user is expected to get an error message
 Examples:
 |			 Username		 |				Password				|
 |	  	QA.Test002 	 |		 WiKi@QATest001 		|
-
