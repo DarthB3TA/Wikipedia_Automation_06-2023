@@ -6,7 +6,7 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions
 (
 		features = {"Features/"},
-		glue = {"wiki.stepdef"},
+		glue = {"wiki.stepdef", "wiki.hooks"},
 		plugin = {"pretty"},
 		dryRun = false,
 		monochrome = true

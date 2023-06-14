@@ -18,7 +18,6 @@ public class Wikipedia_ElemnetPage extends Wikipedia_BasePage
 	
 	//Encapsulation in our framework. We want to make our elements private.
 	
-	
 	//Selects English as the desired choice of language
 	@FindBy(xpath = "//div[@lang='en']")
 	private WebElement English_Language;

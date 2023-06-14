@@ -23,7 +23,8 @@ public class Wikipedia_User_StepDefinition extends Wikipedia_BasePage
 	@Given("User opens browser")
 	public void user_opens_browser() throws InterruptedException, IOException {
 	    
-		Wikipedia_BasePage.setUp();
+		//Has been moved to Wikipedia_Hook
+		//Wikipedia_BasePage.setUp();
 	}
 
 	@Given("Navigates to {string}")
@@ -36,40 +37,70 @@ public class Wikipedia_User_StepDefinition extends Wikipedia_BasePage
 	public void selects_english_as_the_desired_choice_of_language() {
 	    
 		//Selects English as the desired choice of language
-		STQA_Utilities.getExplicitWait(driver.findElement(By.xpath("//div[@lang='en']")), 4);
-		driver.findElement(By.xpath("//div[@lang='en']")).click();
+		
+		//Using Page Factory
+		STQA_Utilities.getExplicitWait(pf.getEnglish_Language(), 5);
+		pf.getEnglish_Language().click();
+		
+//		--------------------------------------------------------------------------------------------		
+//		STQA_Utilities.getExplicitWait(driver.findElement(By.xpath("//div[@lang='en']")), 4);
+//		driver.findElement(By.xpath("//div[@lang='en']")).click();
 	}
 
 	@When("User clicks on the Log In button on the webpage")
-	public void user_clicks_on_the_log_in_button_on_the_webpage() {
+	public void user_clicks_on_the_log_in_button_on_the_webpage() throws InterruptedException {
 	    
-		//Using Page Factory to get Log In button on the webpage
-		STQA_Utilities.getExplicitWait(driver.findElement(By.xpath("//li[@id='pt-login-2']")), 4);
-		driver.findElement(By.xpath("//li[@id='pt-login-2']")).click();
+		//Log In button on the webpage
+		
+		//Using Page Factory
+		STQA_Utilities.getExplicitWait(pf.getLogInButton_WebPage(), 5);
+		pf.getLogInButton_WebPage().click();
+		
+//		--------------------------------------------------------------------------------------------		
+//		STQA_Utilities.getExplicitWait(driver.findElement(By.xpath("//li[@id='pt-login-2']")), 4);
+//		driver.findElement(By.xpath("//li[@id='pt-login-2']")).click();
 	}
 
 	@When("User enters the correct username")
 	public void user_enters_the_correct_username() {
 	    
-		//Username Field
-		STQA_Utilities.getExplicitWait(driver.findElement(By.xpath("//input[@id='wpName1']")), 4);
-		driver.findElement(By.xpath("//input[@id='wpName1']")).sendKeys("QA.Test001");
+		//Username Field, send keys
+		
+		//Using Page Factory
+		STQA_Utilities.getExplicitWait(pf.getUserName_Field(), 5);
+		pf.getUserName_Field().sendKeys("QA.Test001");
+		
+//		--------------------------------------------------------------------------------------------				
+//		STQA_Utilities.getExplicitWait(driver.findElement(By.xpath("//input[@id='wpName1']")), 4);
+//		driver.findElement(By.xpath("//input[@id='wpName1']")).sendKeys("QA.Test001");
 	}
 
 	@When("User enters the correct password")
 	public void user_enters_the_correct_password() {
 	    
-		//Password Field
-		STQA_Utilities.getExplicitWait(driver.findElement(By.xpath("//input[@id='wpPassword1']")), 4);
-		driver.findElement(By.xpath("//input[@id='wpPassword1']")).sendKeys("WiKi@QATest");
+		//Password Field, send keys
+		
+		//Using Page Factory
+		STQA_Utilities.getExplicitWait(pf.getPassWord_Field(), 5);
+		pf.getPassWord_Field().sendKeys("WiKi@QATest");
+		
+//		--------------------------------------------------------------------------------------------			
+//		STQA_Utilities.getExplicitWait(driver.findElement(By.xpath("//input[@id='wpPassword1']")), 4);
+//		driver.findElement(By.xpath("//input[@id='wpPassword1']")).sendKeys("WiKi@QATest");
 	}
 
 	@Then("Clicks on the Log In button on the log in page")
 	public void clicks_on_the_log_in_button_on_the_log_in_page() {
 	    
 		//logInButton_LogInPage
-		STQA_Utilities.getExplicitWait(driver.findElement(By.xpath("//button[@value='Log in']")), 4);
-		driver.findElement(By.xpath("//button[@value='Log in']")).click();
+		
+		//Using Page Factory
+		STQA_Utilities.getExplicitWait(pf.getLogInButton_LogInPage(), 5);
+		pf.getLogInButton_LogInPage().click();
+		
+//		--------------------------------------------------------------------------------------------			
+//		STQA_Utilities.getExplicitWait(driver.findElement(By.xpath("//button[@value='Log in']")), 4);
+//		driver.findElement(By.xpath("//button[@value='Log in']")).click();
 	}
 
 	@Then("The user is successfully logged in")
@@ -234,6 +265,7 @@ public class Wikipedia_User_StepDefinition extends Wikipedia_BasePage
 		//Take Screenshot
 		STQA_Utilities.takeScreenshot();
 		
-		driver.quit();
+		//Has been moved to Wikipedia_Hook
+		//driver.quit();
 	}
 }
