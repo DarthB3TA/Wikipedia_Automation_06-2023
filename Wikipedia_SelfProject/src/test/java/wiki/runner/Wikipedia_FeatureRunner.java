@@ -7,7 +7,7 @@ import io.cucumber.testng.CucumberOptions;
 (
 		features = {"Features/"},
 		glue = {"wiki.stepdef", "wiki.hooks"},
-		plugin = {"pretty"},
+		plugin = {"pretty", "json:target/cucumber.json"},
 		dryRun = false,
 		monochrome = true
 )

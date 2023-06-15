@@ -21,8 +21,8 @@ public class Wikipedia_BasePage
 		
 		Thread.sleep(1000);
 		
-		//WiKi@QATest
-		//QA.Test001
+		//Password: WiKi@QATest
+		//UserName: QA.Test001
 		
 		driver.manage().deleteAllCookies();
 		

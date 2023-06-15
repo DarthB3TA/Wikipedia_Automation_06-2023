@@ -109,7 +109,7 @@ public class Wikipedia_NegativeUser_StepDefinition  extends Wikipedia_BasePage
 		
 		STQA_Utilities.takeScreenshot();
 		
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		
 		//Has been moved to Wikipedia_Hook
 		//driver.quit();	

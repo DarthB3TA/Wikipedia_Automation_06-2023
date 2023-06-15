@@ -9,6 +9,7 @@ import wiki.basepage.Wikipedia_BasePage;
 public class Wikipedia_Hook extends Wikipedia_BasePage
 {
 	//Import from io.cucumber
+	//Will run before each scenario
 	@Before
 	public static void initialize() throws InterruptedException, IOException
 	{
@@ -16,6 +17,7 @@ public class Wikipedia_Hook extends Wikipedia_BasePage
 	}
 	
 	//Import from io.cucumber
+	//Will run after each scenario
 	@After
 	public static void tearDown()
 	{
